@@ -20,6 +20,7 @@ namespace Project_2
         private const int largeCardSize = 100;
         private const int NumOfCopys2 = 2;
         private const int NumOfCopys3 = 3;
+
         int NumberOfCards, SizeCard, Copys,ClickCounter=0;
         Random rnd = new Random();
 
@@ -79,6 +80,11 @@ namespace Project_2
         {
             this.Close();
         }
+
+        /*  <sumary>
+            This function is generate all the pictureBox for the game.
+            
+            </sumary>*/
         private void display()
        {
             MainFlowLayoutPanel.Controls.Clear();
@@ -98,6 +104,7 @@ namespace Project_2
                 picture.Name = $"{name}";
                 picture.Tag = name;
                 picture.Click += pictureBox_Click;
+                // Is a loop that alocate randomly the picture tha will be in the background in each pictureBox 
                 while (FindNum)
                 {
                     int NewrandomNumber = rnd.Next(NumberOfCards);
@@ -142,6 +149,9 @@ namespace Project_2
             temp2 = null;
         }
 
+        /*  <sumary>
+            This function is checking if the two pictures ara the same
+            </sumary>*/
         private void check(PictureBox picture1, PictureBox picture2)
         {
             Timer time = new Timer();
