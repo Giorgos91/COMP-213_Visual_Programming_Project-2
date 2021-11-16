@@ -120,6 +120,12 @@ namespace Project_2
             }
         }
 
+        private void aboutMenu_Click(object sender, EventArgs e)
+        {
+            AboutBox box = new AboutBox();
+            box.ShowDialog();
+        }
+
         private void pictureBox_Click(object sender, EventArgs e)
         {
             var picture = (sender as PictureBox);

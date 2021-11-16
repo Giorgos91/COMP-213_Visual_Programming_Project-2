@@ -111,7 +111,7 @@ namespace Project_2
             // 
             this.smallSize.CheckOnClick = true;
             this.smallSize.Name = "smallSize";
-            this.smallSize.Size = new System.Drawing.Size(224, 28);
+            this.smallSize.Size = new System.Drawing.Size(157, 28);
             this.smallSize.Text = "Small";
             this.smallSize.Click += new System.EventHandler(this.smallSize_Click);
             // 
@@ -119,7 +119,7 @@ namespace Project_2
             // 
             this.mediumSize.CheckOnClick = true;
             this.mediumSize.Name = "mediumSize";
-            this.mediumSize.Size = new System.Drawing.Size(224, 28);
+            this.mediumSize.Size = new System.Drawing.Size(157, 28);
             this.mediumSize.Text = "Medium";
             this.mediumSize.Click += new System.EventHandler(this.mediumSize_Click);
             // 
@@ -127,7 +127,7 @@ namespace Project_2
             // 
             this.largeSize.CheckOnClick = true;
             this.largeSize.Name = "largeSize";
-            this.largeSize.Size = new System.Drawing.Size(224, 28);
+            this.largeSize.Size = new System.Drawing.Size(157, 28);
             this.largeSize.Text = "Large";
             this.largeSize.Click += new System.EventHandler(this.largeSize_Click);
             // 
@@ -144,7 +144,7 @@ namespace Project_2
             // 
             this.march2Rule.CheckOnClick = true;
             this.march2Rule.Name = "march2Rule";
-            this.march2Rule.Size = new System.Drawing.Size(156, 28);
+            this.march2Rule.Size = new System.Drawing.Size(224, 28);
             this.march2Rule.Text = "March 2";
             this.march2Rule.Click += new System.EventHandler(this.march2Rule_Click);
             // 
@@ -152,7 +152,7 @@ namespace Project_2
             // 
             this.march3Rule.CheckOnClick = true;
             this.march3Rule.Name = "march3Rule";
-            this.march3Rule.Size = new System.Drawing.Size(156, 28);
+            this.march3Rule.Size = new System.Drawing.Size(224, 28);
             this.march3Rule.Text = "March 3";
             this.march3Rule.Click += new System.EventHandler(this.march3Rule_Click);
             // 
@@ -161,6 +161,7 @@ namespace Project_2
             this.aboutMenu.Name = "aboutMenu";
             this.aboutMenu.Size = new System.Drawing.Size(71, 27);
             this.aboutMenu.Text = "About";
+            this.aboutMenu.Click += new System.EventHandler(this.aboutMenu_Click);
             // 
             // gameToolStripMenuItem
             // 
