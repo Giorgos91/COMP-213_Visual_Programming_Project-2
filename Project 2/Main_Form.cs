@@ -105,7 +105,7 @@ namespace Project_2
                 int name = i + 1;
                 bool FindNum = true;
                 PictureBox picture = new PictureBox();
-                picture.Image = Properties.Resources.starting;
+                picture.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("starting");
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Width = SizeCard;
                 picture.Name = $"{name}";
@@ -131,7 +131,7 @@ namespace Project_2
         private void pictureBox_Click(object sender, EventArgs e)
         {
             var picture = (sender as PictureBox);
-
+            
             picture.Image = picture.BackgroundImage;
 
             if (temp1.Tag == null)
