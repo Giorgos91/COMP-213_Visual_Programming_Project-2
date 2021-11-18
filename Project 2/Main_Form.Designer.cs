@@ -29,7 +29,6 @@ namespace Project_2
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.gameMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,6 @@ namespace Project_2
             this.match3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +109,7 @@ namespace Project_2
             // 
             this.smallSize.CheckOnClick = true;
             this.smallSize.Name = "smallSize";
-            this.smallSize.Size = new System.Drawing.Size(157, 28);
+            this.smallSize.Size = new System.Drawing.Size(224, 28);
             this.smallSize.Text = "Small";
             this.smallSize.Click += new System.EventHandler(this.smallSize_Click);
             // 
@@ -119,7 +117,7 @@ namespace Project_2
             // 
             this.mediumSize.CheckOnClick = true;
             this.mediumSize.Name = "mediumSize";
-            this.mediumSize.Size = new System.Drawing.Size(157, 28);
+            this.mediumSize.Size = new System.Drawing.Size(224, 28);
             this.mediumSize.Text = "Medium";
             this.mediumSize.Click += new System.EventHandler(this.mediumSize_Click);
             // 
@@ -127,7 +125,7 @@ namespace Project_2
             // 
             this.largeSize.CheckOnClick = true;
             this.largeSize.Name = "largeSize";
-            this.largeSize.Size = new System.Drawing.Size(157, 28);
+            this.largeSize.Size = new System.Drawing.Size(224, 28);
             this.largeSize.Text = "Large";
             this.largeSize.Click += new System.EventHandler(this.largeSize_Click);
             // 
@@ -144,7 +142,7 @@ namespace Project_2
             // 
             this.march2Rule.CheckOnClick = true;
             this.march2Rule.Name = "march2Rule";
-            this.march2Rule.Size = new System.Drawing.Size(224, 28);
+            this.march2Rule.Size = new System.Drawing.Size(156, 28);
             this.march2Rule.Text = "March 2";
             this.march2Rule.Click += new System.EventHandler(this.march2Rule_Click);
             // 
@@ -152,7 +150,7 @@ namespace Project_2
             // 
             this.march3Rule.CheckOnClick = true;
             this.march3Rule.Name = "march3Rule";
-            this.march3Rule.Size = new System.Drawing.Size(224, 28);
+            this.march3Rule.Size = new System.Drawing.Size(156, 28);
             this.march3Rule.Text = "March 3";
             this.march3Rule.Click += new System.EventHandler(this.march3Rule_Click);
             // 
@@ -245,28 +243,6 @@ namespace Project_2
             this.MainFlowLayoutPanel.Size = new System.Drawing.Size(744, 416);
             this.MainFlowLayoutPanel.TabIndex = 1;
             // 
-            // imageList
-            // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "image0.jpg");
-            this.imageList.Images.SetKeyName(1, "image1.jpg");
-            this.imageList.Images.SetKeyName(2, "image2.jpg");
-            this.imageList.Images.SetKeyName(3, "image3.jpg");
-            this.imageList.Images.SetKeyName(4, "image4.jpg");
-            this.imageList.Images.SetKeyName(5, "image5.jpg");
-            this.imageList.Images.SetKeyName(6, "image6.jpg");
-            this.imageList.Images.SetKeyName(7, "image7.jpg");
-            this.imageList.Images.SetKeyName(8, "image8.jpg");
-            this.imageList.Images.SetKeyName(9, "image9.jpg");
-            this.imageList.Images.SetKeyName(10, "image10.jpg");
-            this.imageList.Images.SetKeyName(11, "image11.jpg");
-            this.imageList.Images.SetKeyName(12, "image12.jpg");
-            this.imageList.Images.SetKeyName(13, "image13.jpg");
-            this.imageList.Images.SetKeyName(14, "image14.jpg");
-            this.imageList.Images.SetKeyName(15, "image15.jpg");
-            this.imageList.Images.SetKeyName(16, "image16.jpg");
-            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,7 +290,6 @@ namespace Project_2
         private System.Windows.Forms.ToolStripMenuItem aboutMenu;
         private System.Windows.Forms.ToolStripMenuItem smallSize;
         private System.Windows.Forms.FlowLayoutPanel MainFlowLayoutPanel;
-        private System.Windows.Forms.ImageList imageList;
     }
 }
 

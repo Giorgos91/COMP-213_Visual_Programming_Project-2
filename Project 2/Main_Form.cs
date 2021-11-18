@@ -23,9 +23,10 @@ namespace Project_2
 
         int NumberOfCards, SizeCard, Copys,ClickCounter=0;
         Random rnd = new Random();
+        Timer time = new Timer();
 
-        PictureBox temp1;
-        PictureBox temp2;
+        PictureBox temp1=new PictureBox();
+        PictureBox temp2= null;
         public Main_Form()
         {
             InitializeComponent();
@@ -81,6 +82,12 @@ namespace Project_2
             this.Close();
         }
 
+        private void aboutMenu_Click(object sender, EventArgs e)
+        {
+            AboutBox box = new AboutBox();
+            box.ShowDialog();
+        }
+
         /*  <sumary>
             This function is generate all the pictureBox for the game.
             
@@ -110,7 +117,7 @@ namespace Project_2
                     int NewrandomNumber = rnd.Next(NumberOfCards);
                     if (counter[NewrandomNumber] < Copys)
                     {
-                        picture.BackgroundImage = imageList.Images[NewrandomNumber];
+                        picture.BackgroundImage = (Bitmap)Properties.Resources.ResourceManager.GetObject("image" + NewrandomNumber);
                         counter[NewrandomNumber]++;
                         FindNum = false;
                     }
@@ -120,39 +127,45 @@ namespace Project_2
             }
         }
 
-        private void aboutMenu_Click(object sender, EventArgs e)
-        {
-            AboutBox box = new AboutBox();
-            box.ShowDialog();
-        }
-
         private void pictureBox_Click(object sender, EventArgs e)
         {
             var picture = (sender as PictureBox);
             
             
             picture.Image = picture.BackgroundImage;
-           
-            if (temp1 == null)
+
+            if (temp1.Tag == null)
             {
                 temp1 = sender as PictureBox;
             }
-            else if ((temp1 != null) && (temp2 == null))
+            else if ((temp1.Tag != null) && (temp2.Tag == null))
             {
                 temp2 = sender as PictureBox;
             }
-            if ((temp1 != null) && (temp2 != null))
+            
+            if (temp1.Tag == temp2.Tag)
             {
-                check(temp1, temp2);
+                temp1 = new PictureBox();
+                temp2 = new PictureBox();
             }
+            else
+            {
+                time.Interval = 2000;
+                time.Start();
+                time.Tick += Time_Tick;
+
+            }
+
             ClickCounter++;            
         }
 
         private void Time_Tick(object sender, EventArgs e)
         {
-            var time = (sender as Timer);
+            temp1.Image = Properties.Resources.starting;
+            temp2.Image = Properties.Resources.starting;
             temp1 = null;
             temp2 = null;
+
         }
 
         /*  <sumary>
@@ -161,7 +174,7 @@ namespace Project_2
         private void check(PictureBox picture1, PictureBox picture2)
         {
             Timer time = new Timer();
-            time.Interval = 20000;
+            time.Interval = 2000;
             if ( picture1.Name != picture2.Name)
             {
                 time.Tick += Time_Tick;
