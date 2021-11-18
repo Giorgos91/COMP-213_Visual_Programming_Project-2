@@ -26,7 +26,7 @@ namespace Project_2
         Timer time = new Timer();
 
         PictureBox temp1=new PictureBox();
-        PictureBox temp2= null;
+        PictureBox temp2= new PictureBox();
         public Main_Form()
         {
             InitializeComponent();
@@ -109,7 +109,6 @@ namespace Project_2
                 picture.SizeMode = PictureBoxSizeMode.StretchImage;
                 picture.Width = SizeCard;
                 picture.Name = $"{name}";
-                picture.Tag = name;
                 picture.Click += pictureBox_Click;
                 // Is a loop that alocate randomly the picture tha will be in the background in each pictureBox 
                 while (FindNum)
@@ -118,6 +117,7 @@ namespace Project_2
                     if (counter[NewrandomNumber] < Copys)
                     {
                         picture.BackgroundImage = (Bitmap)Properties.Resources.ResourceManager.GetObject("image" + NewrandomNumber);
+                        picture.Tag = NewrandomNumber;
                         counter[NewrandomNumber]++;
                         FindNum = false;
                     }
@@ -130,42 +130,47 @@ namespace Project_2
         private void pictureBox_Click(object sender, EventArgs e)
         {
             var picture = (sender as PictureBox);
-            
-            
-            picture.Image = picture.BackgroundImage;
 
-            if (temp1.Tag == null)
+            if (picture.Image.Equals( (Bitmap)Properties.Resources.ResourceManager.GetObject("starting")))
             {
-                temp1 = sender as PictureBox;
-            }
-            else if ((temp1.Tag != null) && (temp2.Tag == null))
-            {
-                temp2 = sender as PictureBox;
-            }
-            
-            if (temp1.Tag == temp2.Tag)
-            {
-                temp1 = new PictureBox();
-                temp2 = new PictureBox();
-            }
-            else
-            {
-                time.Interval = 2000;
-                time.Start();
-                time.Tick += Time_Tick;
+                picture.Image = picture.BackgroundImage;
 
-            }
+                if (temp1.Tag == null)
+                {
+                    temp1 = sender as PictureBox;
+                }
+                else if ((temp1.Tag != null) && (temp2.Tag == null))
+                {
+                    temp2 = sender as PictureBox;
+                }
 
-            ClickCounter++;            
+                if ((temp1.Tag != null) && (temp2.Tag != null))
+                {
+                    if (temp1.Tag.GetHashCode() == temp2.Tag.GetHashCode())
+                    {
+                        temp1 = new PictureBox();
+                        temp2 = new PictureBox();
+                    }
+                    else
+                    {
+                        time.Interval = 200;
+                        time.Start();
+                        time.Tick += Time_Tick;
+
+                    }
+                }
+                ClickCounter++;
+                movesTextBox.Text = ClickCounter.ToString();
+            }
         }
 
         private void Time_Tick(object sender, EventArgs e)
         {
+            time.Stop();
             temp1.Image = Properties.Resources.starting;
             temp2.Image = Properties.Resources.starting;
-            temp1 = null;
-            temp2 = null;
-
+            temp1 = new PictureBox();
+            temp2 = new PictureBox();
         }
 
         /*  <sumary>

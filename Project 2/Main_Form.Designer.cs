@@ -54,6 +54,8 @@ namespace Project_2
             this.match3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.movesTextBox = new System.Windows.Forms.TextBox();
+            this.movesLabel = new System.Windows.Forms.Label();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,13 +87,13 @@ namespace Project_2
             // newGame
             // 
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(178, 28);
+            this.newGame.Size = new System.Drawing.Size(224, 28);
             this.newGame.Text = "New Game";
             // 
             // exitGame
             // 
             this.exitGame.Name = "exitGame";
-            this.exitGame.Size = new System.Drawing.Size(178, 28);
+            this.exitGame.Size = new System.Drawing.Size(224, 28);
             this.exitGame.Text = "Exit";
             this.exitGame.Click += new System.EventHandler(this.exitGame_Click);
             // 
@@ -240,8 +242,31 @@ namespace Project_2
             this.MainFlowLayoutPanel.AutoScroll = true;
             this.MainFlowLayoutPanel.Location = new System.Drawing.Point(12, 34);
             this.MainFlowLayoutPanel.Name = "MainFlowLayoutPanel";
-            this.MainFlowLayoutPanel.Size = new System.Drawing.Size(744, 416);
+            this.MainFlowLayoutPanel.Size = new System.Drawing.Size(744, 374);
             this.MainFlowLayoutPanel.TabIndex = 1;
+            // 
+            // movesTextBox
+            // 
+            this.movesTextBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.movesTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movesTextBox.ForeColor = System.Drawing.Color.Red;
+            this.movesTextBox.Location = new System.Drawing.Point(627, 430);
+            this.movesTextBox.Name = "movesTextBox";
+            this.movesTextBox.ReadOnly = true;
+            this.movesTextBox.Size = new System.Drawing.Size(100, 30);
+            this.movesTextBox.TabIndex = 2;
+            this.movesTextBox.TabStop = false;
+            this.movesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // movesLabel
+            // 
+            this.movesLabel.AutoSize = true;
+            this.movesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movesLabel.Location = new System.Drawing.Point(497, 435);
+            this.movesLabel.Name = "movesLabel";
+            this.movesLabel.Size = new System.Drawing.Size(97, 25);
+            this.movesLabel.TabIndex = 3;
+            this.movesLabel.Text = "MOVES :";
             // 
             // Main_Form
             // 
@@ -249,7 +274,9 @@ namespace Project_2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(768, 450);
+            this.ClientSize = new System.Drawing.Size(768, 481);
+            this.Controls.Add(this.movesLabel);
+            this.Controls.Add(this.movesTextBox);
             this.Controls.Add(this.MainFlowLayoutPanel);
             this.Controls.Add(this.mainMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,6 +317,8 @@ namespace Project_2
         private System.Windows.Forms.ToolStripMenuItem aboutMenu;
         private System.Windows.Forms.ToolStripMenuItem smallSize;
         private System.Windows.Forms.FlowLayoutPanel MainFlowLayoutPanel;
+        private System.Windows.Forms.TextBox movesTextBox;
+        private System.Windows.Forms.Label movesLabel;
     }
 }
 
