@@ -127,41 +127,39 @@ namespace Project_2
             }
         }
 
+
         private void pictureBox_Click(object sender, EventArgs e)
         {
             var picture = (sender as PictureBox);
 
-            if (picture.Image.Equals( (Bitmap)Properties.Resources.ResourceManager.GetObject("starting")))
+            picture.Image = picture.BackgroundImage;
+
+            if (temp1.Tag == null)
             {
-                picture.Image = picture.BackgroundImage;
-
-                if (temp1.Tag == null)
-                {
-                    temp1 = sender as PictureBox;
-                }
-                else if ((temp1.Tag != null) && (temp2.Tag == null))
-                {
-                    temp2 = sender as PictureBox;
-                }
-
-                if ((temp1.Tag != null) && (temp2.Tag != null))
-                {
-                    if (temp1.Tag.GetHashCode() == temp2.Tag.GetHashCode())
-                    {
-                        temp1 = new PictureBox();
-                        temp2 = new PictureBox();
-                    }
-                    else
-                    {
-                        time.Interval = 200;
-                        time.Start();
-                        time.Tick += Time_Tick;
-
-                    }
-                }
-                ClickCounter++;
-                movesTextBox.Text = ClickCounter.ToString();
+                temp1 = sender as PictureBox;
             }
+            else if ((temp1.Tag != null) && (temp2.Tag == null))
+            {
+                 temp2 = sender as PictureBox;
+            }
+
+            if ((temp1.Tag != null) && (temp2.Tag != null))
+            {
+                if (temp1.Tag.GetHashCode() == temp2.Tag.GetHashCode())
+                {
+                    temp1 = new PictureBox();
+                    temp2 = new PictureBox();
+                }
+                else
+                {
+                    time.Interval = 200;
+                    time.Start();
+                    time.Tick += Time_Tick;
+
+                }
+            }
+            ClickCounter++;
+            movesTextBox.Text = ClickCounter.ToString();
         }
 
         private void Time_Tick(object sender, EventArgs e)

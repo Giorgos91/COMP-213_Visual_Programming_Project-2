@@ -87,13 +87,13 @@ namespace Project_2
             // newGame
             // 
             this.newGame.Name = "newGame";
-            this.newGame.Size = new System.Drawing.Size(224, 28);
+            this.newGame.Size = new System.Drawing.Size(178, 28);
             this.newGame.Text = "New Game";
             // 
             // exitGame
             // 
             this.exitGame.Name = "exitGame";
-            this.exitGame.Size = new System.Drawing.Size(224, 28);
+            this.exitGame.Size = new System.Drawing.Size(178, 28);
             this.exitGame.Text = "Exit";
             this.exitGame.Click += new System.EventHandler(this.exitGame_Click);
             // 
